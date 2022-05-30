@@ -1,0 +1,4 @@
+export const GET_POKEMONS = "GET_POKEMONS" ;
+export const DELETE_POKEMON = "DELETE_POKEMON" ;
+export const ADD_POKEMON = "ADD_POKEMON" ;
+export const GET_SINGLE_POKEMON = "GET_SINGLE_POKEMON" ;
