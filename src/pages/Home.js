@@ -53,7 +53,7 @@ const Home = () => {
   let dispatch = useDispatch();
   let history = useHistory() ;
  const { pokemons } = useSelector(state => state.data)
-  
+  var test = 10 ;
  useEffect(() => {
     dispatch(loadPokemons());
   }, []);
@@ -85,25 +85,42 @@ const Home = () => {
           {pokemons && pokemons.map((pokemon) => (
              
             <StyledTableRow key={pokemon.id}>
-              <StyledTableCell component="th" scope="row">
+              <StyledTableCell  component="th" scope="row">
                 {pokemon.name["english"]}
-                <StyledTableCell component="th" scope="row">
+                
+                <StyledTableCell align="center" component="th" scope="row">
                 {pokemon.name["french"]}
-                <StyledTableCell  component="th" scope="row">
+                
+                <StyledTableCell align="center" component="th" scope="row">
                 {pokemon.name["japanese"]}
               </StyledTableCell>
              
               </StyledTableCell>
               </StyledTableCell>
+             
               <StyledTableCell align="center">{pokemon.type[0]}
               <StyledTableCell align="center">{pokemon.type[1]}
+              </StyledTableCell>
+              </StyledTableCell>
               
-              </StyledTableCell>
-              </StyledTableCell>
-            
+              
               <StyledTableCell align="center">{pokemon.base["HP"]}</StyledTableCell>
-              
-              <StyledTableCell> <div> <img alt="pokemon" src={`http://localhost:3000/00${pokemon.id}.png`}/></div> </StyledTableCell>
+              <StyledTableCell align="center">
+            if(pokemon.id {'<'} 10) {
+
+             <StyledTableCell> <div> <img alt="pokemon" style={{width: "100px"}} src={`http://localhost:3000/00${pokemon.id}.png`}/></div> </StyledTableCell>
+            }
+               if(pokemon.id {'>='} 10){
+
+<StyledTableCell> <div> <img alt="pokemon" style={{width: "100px"}} src={`http://localhost:3000/0${pokemon.id}.png`}/></div> </StyledTableCell>
+}
+
+if(pokemon.id {'>='} 100){
+
+<StyledTableCell> <div> <img alt="pokemon" style={{width: "100px"}} src={`http://localhost:3000/${pokemon.id}.png`}/></div> </StyledTableCell>
+}
+
+</StyledTableCell>
               <StyledTableCell align="center">
                 <StyledTableCell align="center">
                 <ButtonGroup variant="contained" aria-label="outlined primary button group">
